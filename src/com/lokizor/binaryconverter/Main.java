@@ -1,5 +1,9 @@
 package com.lokizor.binaryconverter;
 
+//TODO 
+//16 -> 10000 
+//15-> 01111 -> 0 is not needed; 
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -61,9 +65,7 @@ public class Main {
 			}
 			
 			result*=2;
-			if (decimal <= result) {
-				break;
-			}
+			
 			amountOfDigitsInBinary++;
 			
 		}
@@ -87,6 +89,12 @@ public class Main {
 			    long binaryAsDecimal = binaryToDecimal(binary);
 				
 				if (binaryAsDecimal == decimal) {
+					
+					if (binaryArr[0] == '0') {
+						return binary.substring(1);
+						
+					}
+					
 					return binary;
 				}
 				
@@ -99,6 +107,11 @@ public class Main {
 			
 				
 				if (binaryAsDecimal == decimal) {
+
+					if (binaryArr[0] == '0') {
+						return binary.substring(1);
+						
+					}
 					return binary;
 				}
 				
@@ -111,10 +124,19 @@ public class Main {
 				
 			}
 
+			if (binaryArr[0] == '0') {
+				return String.valueOf(binaryArr).substring(1);
+				
+			}
+
 			return String.valueOf(binaryArr);
-					//why did I get @reference here when binaryArr.toString()? 
+	}
+}
+/*
+ * 		//why did I get @reference here when binaryArr.toString()? 
 			//binary = binaryArr.toString();
 			//System.out.println(binary + " is binary"); [C@4dc63996 is binary toStrgg.valueOf(binaryArr);
-	}		//because char[] arr = new char[5] means it is empty, no initial 0 values;
-}
-	
+	}		//because char[] arr = new char[5] means it is empty, no initial 0 values;	
+ */
+
+
