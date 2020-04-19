@@ -115,6 +115,6 @@ public class Main {
 					//why did I get @reference here when binaryArr.toString()? 
 			//binary = binaryArr.toString();
 			//System.out.println(binary + " is binary"); [C@4dc63996 is binary toStrgg.valueOf(binaryArr);
-	}
+	}		//because char[] arr = new char[5] means it is empty, no initial 0 values;
 }
 	
